@@ -70,7 +70,7 @@ GET /api/logs
 ```
 **Exemplo de uso:**
 ```
-http://localhost:8081/api/logs
+http://localhost:8081/logs
 ```
 Retorna todos os registros de consultas realizados, armazenados no banco PostgreSQL.
 

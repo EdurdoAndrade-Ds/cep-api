@@ -23,11 +23,6 @@ public class CepController {
         return ResponseEntity.ok(cepService.buscarCep(cep));
     }
 
-    @GetMapping("/logs")
-    public ResponseEntity<List<LogConsulta>> listarLogs() {
-        return ResponseEntity.ok(cepService.listarLogs());
-    }
-
     @GetMapping("/test")
     public ResponseEntity<String> test() {
         return ResponseEntity.ok("API de CEP esta rodando!");
