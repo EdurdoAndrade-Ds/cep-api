@@ -98,16 +98,6 @@ docker-compose up --build
 docker-compose up -d --build
 ```
 
-### **Parar todos os containers**
-```bash
-docker-compose down
-```
-
-### **Acessar o banco de dentro do container**
-```bash
-docker exec -it <ID_CONTAINER_POSTGRES> psql -U postgres -d cep_db
-```
-
 ---
 
 ## 🗂️ Estrutura do Projeto
@@ -138,5 +128,5 @@ Este projeto está sob a licença MIT.
 ---
 
 ## ✨ Autor
-- **Seu Nome** - [GitHub](https://github.com/SEU_USUARIO)
+- **Eduardo Andrade** - [GitHub](https://github.com/EdurdoAndrade-Ds)
 
