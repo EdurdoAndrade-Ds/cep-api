@@ -1,0 +1,14 @@
+{
+  "priority": 10,
+  "request": {
+    "method": "GET",
+    "urlPattern": "/cep/.*"
+  },
+  "response": {
+    "status": 404,
+    "body": "{ \"erro\": \"CEP não encontrado.\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

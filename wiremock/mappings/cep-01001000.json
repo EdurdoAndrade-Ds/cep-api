@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/cep/01001000"
+  },
+  "response": {
+    "status": 200,
+    "body": "{ \"cep\": \"01001000\", \"logradouro\": \"Praça do Centro\", \"bairro\": \"Jardins\", \"cidade\": \"São Paulo\", \"uf\": \"SP\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

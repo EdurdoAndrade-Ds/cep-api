@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: cep-db
+    restart: always
+    environment:
+      POSTGRES_DB: cep_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 100521
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - cep-net
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+    container_name: cep-api
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/cep_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 100521
+      SERVER_PORT: 8081
+      SERVER_ADDRESS: 0.0.0.0
+    networks:
+      - cep-net
+
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8085:80"
+    networks:
+      - cep-net
+
+  wiremock:
+    image: wiremock/wiremock:latest
+    container_name: wiremock
+    ports:
+      - "8083:8080"  # WireMock na porta 8083
+    networks:
+      - cep-net
+    volumes:
+      - ./wiremock:/home/wiremock  # Onde você pode colocar mocks pré-configurados
+    command: [ "--verbose" ]
+
+volumes:
+  pgdata:
+
+networks:
+  cep-net:
+    driver: bridge

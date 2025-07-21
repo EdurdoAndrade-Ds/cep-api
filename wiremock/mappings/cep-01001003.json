@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/cep/01001003"
+  },
+  "response": {
+    "status": 200,
+    "body": "{ \"cep\": \"01001003\", \"logradouro\": \"Rua das Flores\", \"bairro\": \"Jardim Silva\", \"cidade\": \"Itapecerica\", \"uf\": \"SP\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/cep/01001001"
+  },
+  "response": {
+    "status": 200,
+    "body": "{ \"cep\": \"01001001\", \"logradouro\": \"Rua das palmas\", \"bairro\": \"Centro\", \"cidade\": \"Embu das Artes\", \"uf\": \"SP\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

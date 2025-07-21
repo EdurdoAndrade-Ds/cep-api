@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/cep/01001002"
+  },
+  "response": {
+    "status": 200,
+    "body": "{ \"cep\": \"01001002\", \"logradouro\": \"Avenida do Camelo\", \"bairro\": \"Egito\", \"cidade\": \"Taboao da Serra\", \"uf\": \"SP\" }",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
