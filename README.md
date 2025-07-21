@@ -86,20 +86,6 @@ Se o CEP não estiver definido no **WireMock**, o retorno será:
 
 ---
 
-## 🐳 Comandos Úteis do Docker
-
-### **Subir todos os containers**
-```bash
-docker-compose up --build
-```
-
-### **Subir em segundo plano (detached mode)**
-```bash
-docker-compose up -d --build
-```
-
----
-
 ## 🗂️ Estrutura do Projeto
 ```text
 cep-api/
