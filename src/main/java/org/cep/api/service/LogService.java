@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import lombok.RequiredArgsConstructor;
-import org.cep.api.client.CepClient;
 import org.cep.api.model.CepResponse;
 import org.cep.api.repository.LogRepository;
 import org.cep.api.model.LogConsulta;

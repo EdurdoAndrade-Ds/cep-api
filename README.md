@@ -15,6 +15,8 @@ A aplicação foi totalmente containerizada usando **Docker** e **Docker Compose
 - **pgAdmin 4** (interface web para o banco)
 - **Docker e Docker Compose**
 - **Lombok**
+- **SOLID** aplicado com segregação de responsabilidades
+- **Arquitetura modular com interfaces e injeção de dependência**
 
 ---
 
@@ -70,7 +72,7 @@ GET /api/logs
 ```
 **Exemplo de uso:**
 ```
-http://localhost:8081/logs
+http://localhost:8081/api/logs
 ```
 Retorna todos os registros de consultas realizados, armazenados no banco PostgreSQL.
 
@@ -104,6 +106,12 @@ cep-api/
 ├── Dockerfile
 └── README.md
 ```
+---
+
+## 🗺️ Diagrama da Arquitetura
+
+![Diagrama da Arquitetura](./docs/diagrama-spring-solid.png)
+
 
 ---
 

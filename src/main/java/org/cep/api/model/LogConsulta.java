@@ -2,11 +2,9 @@ package org.cep.api.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.cep.api.converter.JpaJsonConverter;
-
 import java.time.LocalDateTime;
 
 @Entity

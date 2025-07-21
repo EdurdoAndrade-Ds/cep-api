@@ -3,7 +3,6 @@ package org.cep.api.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.cep.api.model.LogConsulta;
-import org.cep.api.repository.LogRepository;
 import org.cep.api.service.LogReader;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

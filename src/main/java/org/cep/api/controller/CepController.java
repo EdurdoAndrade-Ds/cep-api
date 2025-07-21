@@ -2,7 +2,6 @@ package org.cep.api.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.cep.api.model.CepResponse;
-import org.cep.api.model.LogConsulta;
 import org.cep.api.service.CepService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/cep")
