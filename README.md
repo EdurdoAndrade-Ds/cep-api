@@ -110,7 +110,7 @@ cep-api/
 
 ## 🗺️ Diagrama da Arquitetura
 
-[Diagrama da Arquitetura](./docs/diagrama-spring-solid.png)
+[Diagrama da Arquitetura](https://drive.google.com/file/d/1SBwNOkwtd3XA5psX7etLL2CJfDB7gk3E/view?usp=drive_link)
 
 
 ---
