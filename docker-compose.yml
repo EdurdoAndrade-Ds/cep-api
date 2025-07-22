@@ -9,6 +9,7 @@ services:
       POSTGRES_DB: cep_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 100521
+      TZ: America/Sao_Paulo
     ports:
       - "5432:5432"
     volumes:
@@ -29,13 +30,14 @@ services:
       db:
         condition: service_healthy
     ports:
-      - "8081:8081"
+      - "8081:8081"      # API porta 8081
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/cep_db
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: 100521
       SERVER_PORT: 8081
       SERVER_ADDRESS: 0.0.0.0
+      TZ: America/Sao_Paulo
     networks:
       - cep-net
 
@@ -46,8 +48,9 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin
+      TZ: America/Sao_Paulo
     ports:
-      - "8085:80"
+      - "8085:80"     # pgAdmin porta 8085
     networks:
       - cep-net
 
@@ -55,12 +58,14 @@ services:
     image: wiremock/wiremock:latest
     container_name: wiremock
     ports:
-      - "8083:8080"  # WireMock na porta 8083
+      - "8083:8080"  # WireMock porta 8083
     networks:
       - cep-net
     volumes:
-      - ./wiremock:/home/wiremock  # Onde você pode colocar mocks pré-configurados
+      - ./wiremock:/home/wiremock  # pré-configuracao mocks
     command: [ "--verbose" ]
+    environment:
+      TZ: America/Sao_Paulo
 
 volumes:
   pgdata:
@@ -68,3 +73,4 @@ volumes:
 networks:
   cep-net:
     driver: bridge
+

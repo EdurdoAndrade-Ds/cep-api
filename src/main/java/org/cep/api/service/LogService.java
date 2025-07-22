@@ -1,6 +1,7 @@
 package org.cep.api.service;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.List;
 
 import lombok.RequiredArgsConstructor;
@@ -22,7 +23,7 @@ public class LogService implements LogWriter, LogReader  {
         LogConsulta log = new LogConsulta();
         log.setCep(cep);
         log.setResposta(response);
-        log.setDataConsulta(LocalDateTime.now());
+        log.setDataConsulta(LocalDateTime.now(ZoneId.of("America/Sao_Paulo")));
         logRepository.save(log);
     }
 
