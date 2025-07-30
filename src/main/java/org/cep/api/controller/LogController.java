@@ -2,8 +2,10 @@ package org.cep.api.controller;
 
 
 import lombok.RequiredArgsConstructor;
-import org.cep.api.model.LogConsulta;
-import org.cep.api.service.LogReader;
+import org.cep.api.dto.LogConsultaDTO;
+
+import org.cep.api.log.LogReader;
+import org.cep.api.service.LogService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,14 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/logs")
-public class LogController {
+@RequestMapping("/logs")
+public class    LogController {
     private final LogReader logReader;
+    private final LogService logService;
+
+
 
     @GetMapping
-    public ResponseEntity<List<LogConsulta>> listarLogs() {
+    public ResponseEntity<List<LogConsultaDTO>> listarLogs()    {
         return ResponseEntity.ok(logReader.listarLogs());
     }
 }

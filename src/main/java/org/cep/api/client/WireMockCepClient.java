@@ -1,6 +1,5 @@
 package org.cep.api.client;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.cep.api.model.CepResponse;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,7 +23,7 @@ public class WireMockCepClient implements CepClient {
 
     @Override
     public CepResponse buscarCep(String cep) {
-        String url = baseUrl + cep;
+        String url = baseUrl + cep + "/json/";
         try {
             log.info("[cepclient] Chamando {}", url);
             ResponseEntity<CepResponse> resp = restTemplate.getForEntity(url, CepResponse.class);

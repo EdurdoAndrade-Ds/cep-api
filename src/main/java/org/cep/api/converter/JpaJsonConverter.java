@@ -3,7 +3,7 @@ package org.cep.api.converter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.AttributeConverter;
 import org.cep.api.model.CepResponse;
-import jakarta.persistence.Converter;
+    import jakarta.persistence.Converter;
 
 @Converter(autoApply = false)
 public class JpaJsonConverter implements AttributeConverter<CepResponse, String> {
