@@ -1,6 +1,5 @@
 package org.cep.api.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,20 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CepResponse {
     private String cep;
-
-    // @JsonProperty("localidade")
-    private String cidade;
     private String bairro;
-    private String estado;
     private String logradouro;
     private String localidade;
     private String uf;
-    private String erro;
-
-    public static CepResponse notFound(String cep) {
-        CepResponse r = new CepResponse();
-        r.setCep(cep);
-        r.setErro("CEP nao encontrado.");
-        return r;
-    }
 }

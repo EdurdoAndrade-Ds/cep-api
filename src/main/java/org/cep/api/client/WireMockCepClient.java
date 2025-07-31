@@ -24,19 +24,10 @@ public class WireMockCepClient implements CepClient {
     @Override
     public CepResponse buscarCep(String cep) {
         String url = baseUrl + cep + "/json/";
-        try {
-            log.info("[cepclient] Chamando {}", url);
-            ResponseEntity<CepResponse> resp = restTemplate.getForEntity(url, CepResponse.class);
-            return resp.getBody();
-        } catch (HttpClientErrorException.NotFound nf) {
-            log.warn("[CepClient] CEP {} nao encontrado (404).", cep);
-            return CepResponse.notFound(cep);
-        } catch (HttpClientErrorException ex) {
-            log.error("[CepClient] Erro HTTP {} ao chamar {}: {}", ex.getStatusCode(), url, ex.getMessage());
-            throw  ex;
-        } catch (Exception e) {
-            log.error("[CepClient] Erro generico ao chamar {}: {}", url, e.getMessage(), e);
-            throw e;
-        }
+
+        log.info("[cepclient] Chamando {}", url);
+        ResponseEntity<CepResponse> resp = restTemplate.getForEntity(url, CepResponse.class);
+        return resp.getBody();
+
     }
 }

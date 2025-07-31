@@ -1,5 +1,6 @@
 package org.cep.api.converter;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.AttributeConverter;
 import org.cep.api.model.CepResponse;
@@ -8,7 +9,7 @@ import org.cep.api.model.CepResponse;
 @Converter(autoApply = false)
 public class JpaJsonConverter implements AttributeConverter<CepResponse, String> {
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);;
 
     @Override
     public String convertToDatabaseColumn(CepResponse attribute) {

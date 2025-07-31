@@ -10,6 +10,8 @@ import java.time.ZoneId;
 
 public class LogMapper {
 
+
+
     public static LogConsultaDTO toDTO(LogConsulta log) {
         CepResponse r = log.getResposta();
         CepResponseDTO responseDTO = new CepResponseDTO(

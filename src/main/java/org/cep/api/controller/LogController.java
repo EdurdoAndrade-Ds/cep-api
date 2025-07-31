@@ -5,7 +5,6 @@ import lombok.RequiredArgsConstructor;
 import org.cep.api.dto.LogConsultaDTO;
 
 import org.cep.api.log.LogReader;
-import org.cep.api.service.LogService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +18,6 @@ import java.util.List;
 @RequestMapping("/logs")
 public class    LogController {
     private final LogReader logReader;
-    private final LogService logService;
-
 
 
     @GetMapping
